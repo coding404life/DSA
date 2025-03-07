@@ -164,6 +164,15 @@ const containCommonItems2 = (arr1, arr2) =>
 const array1 = ["y", "s", "f", "a"];
 const array2 = ["a", "b", "c", "d", "e"];
 
+const convertArrayIntoObjectProperties = (arr) => {
+  let map = {};
+  for (let item of arr) {
+    if (!map[item]) map[item] = true;
+  }
+
+  return map
+}
+
 function containCommonItems3(arr1, arr2) {
   /*
   - loop through first array and create object where properties === items in the array
@@ -174,10 +183,7 @@ function containCommonItems3(arr1, arr2) {
   - what is the main goal space or time complexity
 */
 
-  let map = {};
-  for (let item of arr1) {
-    if (!map[item]) map[item] = true;
-  }
+  const map =  convertArrayIntoObjectProperties(arr1)
 
   for (let item of arr2) {
     if (map[item]) {
