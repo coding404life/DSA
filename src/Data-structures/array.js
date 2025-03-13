@@ -12,4 +12,4 @@ console.log(string[0]);
 
 console.log(string);
 
-window.alert("hello world");
+// implementing an array
