@@ -44,7 +44,7 @@ class MyArray {
   shiftItems(index) {
     for (let i = index; i < this.length - 1; i++) {
       this.data[i] = this.data[i + 1];
-      console.log(this.data[i], this.data[i + 1]);
+      console.log(i, i + 1, index);
     }
 
     delete this.data[this.length - 1];
@@ -56,8 +56,6 @@ class MyArray {
   if index = 1
   i = 1
   this.data[i] => 6 = this.data[i + 1] => 2
-
-
 */
 }
 
