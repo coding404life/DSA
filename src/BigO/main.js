@@ -170,8 +170,8 @@ const convertArrayIntoObjectProperties = (arr) => {
     if (!map[item]) map[item] = true;
   }
 
-  return map
-}
+  return map;
+};
 
 function containCommonItems3(arr1, arr2) {
   /*
@@ -183,7 +183,7 @@ function containCommonItems3(arr1, arr2) {
   - what is the main goal space or time complexity
 */
 
-  const map =  convertArrayIntoObjectProperties(arr1)
+  const map = convertArrayIntoObjectProperties(arr1);
 
   for (let item of arr2) {
     if (map[item]) {
@@ -195,3 +195,45 @@ function containCommonItems3(arr1, arr2) {
 }
 
 console.log(containCommonItems3(array1, array2));
+
+function evenOrOdd(number) {
+  // Question: do i expect the arguments to be only number or it could be a string
+  // if it could be a string so i should convert strings into numbers
+
+  if (isNaN(number) || typeof number !== "number") {
+    throw new Error("Input must be number and not empty");
+  }
+
+  if (Number(number) % 2 === 0) {
+    return "Even";
+  } else {
+    return "Odd";
+  }
+}
+console.log(evenOrOdd("2"));
+
+// 1. Question: do i expect the arguments to be only number or it could be a string
+// 2. if it could be a string so i should convert strings into numbers
+// 3. if it is not a number or it is empty throw an error
+// 4. if it is a number check if it is even or odd
+// 5. return the result
+
+function fizzbuzz(n = 100) {
+  const result = [];
+
+  for (let i = 1; i <= n; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      result.push('FizzBuzz');
+    } else if (i % 3 === 0) {
+      result.push('Fizz');
+    } else if (i % 5 === 0) {
+      result.push('Buzz');
+    } else {
+      result.push(i);
+    }
+  }
+
+  return result;
+}
+
+console.log(fizzbuzz());
